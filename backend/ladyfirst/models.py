@@ -41,8 +41,8 @@ class Product(models.Model):
     original_price = models.DecimalField(max_digits=10, decimal_places=2)
     second_hand_price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField(null=True, blank=True)
-    image_urls = models.JSONField()
-    authenticity_docs = models.JSONField(null=True, blank=True)
+    image_urls = models.URLField(max_length=255)
+    authenticity_docs = models.URLField(null=True, blank=True, max_length=255)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='active')
     created_at = models.DateTimeField(auto_now_add=True)
 
